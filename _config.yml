@@ -1,9 +1,9 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
+title: Scott Einsidler's Website
+description: Blog posts and Projects relating to things I'm working on and interested in!
+author: Scott Einsidler
+github: https://github.com/seinsidler
+about: I love mathematics and programming, and the cross-section between the two. 
+disqus_shortname: scotteinsidlerwebsite
 google_analytics: UA-XXXXXXXX-Y
 
 enableTags: true
@@ -15,14 +15,6 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "#"
-    - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
     - icon: fa-github
       link: "https://github.com/agusmakmun"
 
@@ -38,7 +30,7 @@ urls:
     - text: XML Feed
       url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+# url: "https://agusmakmun.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
