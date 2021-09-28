@@ -27,4 +27,156 @@ Kademlia stores information about our node addresses by putting them into bucket
 
 That's all I'll say on the algorithm for now because we don't interact with it too much under the hood for now. But I will cover the algorithm more in depth in a future blog post as I find this algorithm pretty intriguing! 
 
-## 
+## Let's Get to the Code!
+
+I found out about all this cool stuff in [this example](https://github.com/libp2p/go-libp2p/tree/master/examples/chat-with-rendezvous) in the go-libp2p library. Instead of dealing with all the flag parsing in main, the example has them placed in a separate flags.go file, and I decided to do the same. The main also is basically the same as the driver in the above example, using our own functions in node.go and chain.go where it is necessary and implementing our blockchain instead of the chat application. Let's go through it! 
+
+```go
+func main() {
+	// establish blockchain
+	t := time.Now()
+	genesisBlock := chain.Block{}
+	genesisBlock = chain.Block{Index: 0, Timestamp: t.String(), BPM: 0, Hash: chain.CalculateHash(genesisBlock), PrevHash: "", Difficulty: difficulty}
+
+	chain.Blockchain = append(chain.Blockchain, genesisBlock)
+	log.SetAllLoggers(log.LevelWarn)
+	log.SetLogLevel("rendezvous", "info")
+	help := flag.Bool("h", false, "Display Help")
+	config, err := ParseFlags()
+	if err != nil {
+		panic(err)
+	}
+
+	if *help {
+		fmt.Println("This program demonstrates a simple p2p chat application using libp2p")
+		fmt.Println()
+		fmt.Println("Usage: Run './chat in two different terminals. Let them connect to the bootstrap nodes, announce themselves and connect to the peers")
+		flag.PrintDefaults()
+		return
+	}
+
+	// var r io.Reader
+	// r = rand.Reader
+
+	// Generate a key pair for this host. We will use it
+	// to obtain a valid host ID.
+	// priv, _, err := crypto.GenerateKeyPairWithReader(crypto.RSA, 2048, r)
+	// if err != nil {
+	// 	panic(err)
+	// }
+
+	opts := []libp2p.Option{
+		libp2p.ListenAddrStrings(fmt.Sprintf(config.ListenAddresses.String())),
+		// libp2p.Identity(priv),
+	}	
+
+	// // libp2p.New constructs a new libp2p Host. Other options can be added
+	// // here.
+	ctx := context.Background()
+	
+	host, err := libp2p.New(opts...)
+	if err != nil {
+		panic(err)
+	
+	}
+	node := chain.Node{Ha: host}
+	logger.Info("Host created. We are:", host.ID())
+	logger.Info(host.Addrs())
+
+	// // Set a function as stream handler. This function is called when a peer
+	// // initiates a connection and starts a stream with this peer.
+	host.SetStreamHandler(protocol.ID(config.ProtocolID), node.HandleStream)
+
+	// // Start a DHT, for use in peer discovery. We can't just make a new DHT
+	// // client because we want each peer to maintain its own local copy of the
+	// // DHT, so that the bootstrapping node of the DHT can go down without
+	// // inhibiting future peer discovery.
+	
+	kademliaDHT, err := dht.New(ctx, host)
+	if err != nil {
+		panic(err)
+	}
+
+	// // Bootstrap the DHT. In the default configuration, this spawns a Background
+	// // thread that will refresh the peer table every five minutes.
+	logger.Debug("Bootstrapping the DHT")
+	if err = kademliaDHT.Bootstrap(ctx); err != nil {
+		panic(err)
+	}
+
+	// // Let's connect to the bootstrap nodes first. They will tell us about the
+	// // other nodes in the network.
+	var wg sync.WaitGroup
+	for _, peerAddr := range config.BootstrapPeers {
+		peerinfo, _ := peer.AddrInfoFromP2pAddr(peerAddr)
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			if err := host.Connect(ctx, *peerinfo); err != nil {
+				logger.Warning(err)
+			} else {
+				logger.Info("Connection established with bootstrap node:", *peerinfo)
+			}
+		}()
+	}
+	wg.Wait()
+
+	// We use a rendezvous point "meet me here" to announce our location.
+	// This is like telling your friends to meet you at the Eiffel Tower.
+	logger.Info("Announcing ourselves...")
+
+	routingDiscovery := discovery.NewRoutingDiscovery(kademliaDHT)
+	discovery.Advertise(ctx, routingDiscovery, config.RendezvousString)
+	logger.Debug("Successfully announced!")
+
+	// Now, look for others who have announced
+	// This is like your friend telling you the location to meet you.
+	logger.Debug("Searching for other peers...")
+	peerChan, err := routingDiscovery.FindPeers(ctx, config.RendezvousString)
+	if err != nil {
+		panic(err)
+	}
+	// testing for kademliaDHT
+	for peer := range peerChan {
+		if peer.ID == host.ID() {
+			continue
+		}
+		logger.Debug("Found peer:", peer)
+
+		logger.Debug("Connecting to:", peer)
+		stream, err := host.NewStream(ctx, peer.ID, protocol.ID(config.ProtocolID))
+
+		if err != nil {
+			logger.Warning("Connection failed:", err)
+			fmt.Print("Peer ID: ", kademliaDHT.PeerID())
+			fmt.Printf("Peer Key: ")
+			fmt.Printf("%+v\n", kademliaDHT.PeerKey())
+			fmt.Printf("\n")
+			fmt.Printf("Routing Table Check: ")
+			// fmt.Printf("%+v\n", kademliaDHT.RoutingTable().GetPeerInfos())
+			continue
+		} else {
+			// rw := bufio.NewReadWriter(bufio.NewReader(stream), bufio.NewWriter(stream))
+
+			// go writeData(rw)
+			// go readData(rw)
+			node.HandleStream(stream)
+		}
+
+		logger.Info("Connected to:", peer)
+	}
+
+	select {}
+}
+```
+So ```main``` looks very similar the ```main``` function in previous post at the start: we record the current time and startup the blockchain with a genesis block. Next, we set up our logging (not very important) and parse command line flags. These are different flags than the previous blog post, but the most important thing is that we only need to run our program with a single flag indicating an address to listen onto. We don't need another address to listen to for any node! 
+
+Next, we have a condition if the help flag is entered. Next create an array that is used to set our options for our host. For our setup, we only need to supply "listening addresses", which is what we give on the command line when we run the node. Then we setup the host with our options.
+
+Our ```Node``` struct now only contains a ```host.Host``` element inside of it, and we pass our new host in a node struct. Next, we set up a connection with ```setStreamHandler```. After, we setup the infamous DHT using Kademlia and attempt to bootstrap to a node from one of our bootstrap nodes. 
+
+After attempting boostrapping, we annouce ourselves on the network for the other incoming peers attempting to join the network. The rest of main that resides in the for loop is dedicated to finding new peers and creating streams with incoming peers on the network. 
+
+## Easy Peasy, Automatic Peer Discovery Squeezy 
+
+We now have automatic node discovery on our network! I thought that would be a lot harder to implement this than it was, but having the chat application example came to be very useful. Instructions on how to work the repository and the code described above will be in the branch named "pt-2" in [this](https://github.com/seinsidler/scott-chain) repository. I'm going to go in more depth on the Kademlia algorithm and DHTs in a future blog post or two, but I'll just leave this a very rough overview of the growth of this project. Feel Free to help contribute to the project and create branches, maybe your changes will be added to the main branch! 
