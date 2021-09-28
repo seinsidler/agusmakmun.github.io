@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building a Blockchain (in Go) for Fun (Pt. 1)
-date: 2021-09-16 21:11:27
+date: 2021-09-27 21:11:27
 categories: [crytocurrency, golang]
 ---
 
