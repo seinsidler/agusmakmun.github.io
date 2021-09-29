@@ -10,7 +10,7 @@
 	{
 		"name": "scottchess (Very Bad Chess Bot Using Neural Network for Board Valuation)",
 		"image": "placeholder.jpg",
-		"url": "#",
+		"url": "https://github.com/seinsidler/scottchess",
 		"date": "April 2020",
 		"tags": ["Python","Mathematics"]
 	}
