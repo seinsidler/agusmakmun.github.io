@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using $K$-Means Clustering to Recognize Pitching Patterns
+title: Using K-Means Clustering to Recognize Pitching Patterns
 date: 2019-12-19 00:00:00
 categories: [mathematics]
 ---
