@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Analyzing the Strike-Zone: Using K-Means Clustering to Recognize Pitching Patterns
+title:  Using K-Means Clustering to Recognize Pitching Patterns
+date: 2019-12-19
 categories: [mathematics]
 ---
 
