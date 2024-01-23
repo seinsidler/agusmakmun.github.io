@@ -26,7 +26,9 @@ The book's solution is stated as follows:
 >Call the six colors 1, 2, 3, 4, 5, 6. Put the cube on the table so that face 1 is at the bottom. Consider face 2. If it is at the top then we can rotate the cube about a vertical axis so that face 3 is in front. Now the cube is fixed. There are $3! = 6$ ways to complete the coloring. Now, suppose that face 2 is a neighbor of 1. Then we rotate the cube so that 2 is in front. Now the cube is fixed, and the coloring can be complete in $4! = 24$ ways. Altogether, there are $6+24 = 30$ distinct colorings of the cue by six colors.
 
 Remember that when you see $3!$, $4!$, or $n!$, that is called the factorial, which is defined as 
+
 $$n!=n\cdot (n-1)\cdot (n-2) \cdot ... \cdot 1$$
+
 So for example $4!=4\cdot 3\cdot 2\cdot 1=24$ and $6!=6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1=720$. 
 
 I see some pros and some cons to this solution. A pro is that it just requires thinking about all the possible cases of colorings, and there isn't really a lot of mathematical machinery involved, outside of the factorial, which appears pretty naturally and intuitively in the solution. One con, in my opinion, is that this approach doesn't seem too intuitive. It would involve knowing that you would only need to know the color of two sides to know the cube is fixed. Personally, my mind didn't go there when I thought of my solution. 
@@ -38,6 +40,7 @@ In problems like these, I think its always nice to start with a simple example t
 So, how many ways are there to color each side of a coin with two different colors? 1 way of course! But why exactly?
 
 Well, if we didn't know any better, we might say that there are two different ways to order the colors, say red and blue: 
+
 $$\{Red, Blue\},\{Blue, Red\}$$
 
 So, lets say we take a quarter and paint the top red and the bottom blue, and put that to the side. Then, we take another quarter, and paint the top of this quarter blue and the bottom red. We painted the two possible ordering of colors on this quarter, but we notice that if we flip one of the quarters over, we'll just have two identical looking quarters. At this point, if we flip over one quarter and swap them around a bunch of times like a street magician, we won't be able to tell them apart!
@@ -45,6 +48,7 @@ So, lets say we take a quarter and paint the top red and the bottom blue, and pu
 This means that if we said there are two ways to color a coin, we would be overcounting the ways we can color the cube. But how do we account for this?
 
 Well, we know that quarter can be oriented two different ways. The first way is if we do nothing to the quarter and the second way is if we flip the quarter over. When we counted the number of ways we can order the two colors, that doesn't take into account the quarter looks the same when we do nothing to it and when we flip it. So if we take the number of ways we can orient the quarter, we get our answer: 
+
 $$ \begin{equation}\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the coin}}=\frac{2}{2}=1\end{equation}$$
 
 How can we apply this to our problem. First, a detour into an interesting concept of mathematics: groups!
@@ -77,9 +81,13 @@ From this, we can see that the rotations of a coin forms a group, or more specif
 
 ## Back to the Problem
 If we remember when we solved the problem for the coin, we used the following expression to figure out all the ways to color the coin.
+
 $$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the coin}}$$
+
 With our knowledge of groups, we can now recognize that the denominator of the fraction is just the size of the symmetry group of the coin! We can write a similar expression for our cube problem as follows:
+
 $$\begin{equation}\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}\end{equation}$$
+
 So, if we can count the number of rotations of the cube, we can solve our problem! 
 
 Lets count all the rotations of a cube. If you have a rubiks cube or a tissue box near by, I recommend holding this in your hand to perform these rotations.
@@ -109,13 +117,19 @@ $$1+9+6+8=24$$
 total rotations. 
 
 Putting this all together, we can return to our expression for finding the number of distinct ways to color the cube with six colors, which is the following:
+
 $$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}$$
+
 We found the denominator to be 24. We can find the numerator in the following way: we have 6 choices for the first color, and for each choice of the first color, we have 5 choices for the second color. For the 5 choices of the second color, we have 4 choices for the third color. We keep this going all the way down to having 1 choice for the last color given 2 choices for the second to last color. This means that there are 
+
 $$6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1=6!=720$$
+
 ways to order the 6 colors. 
 
 Now, we have all we need to plug in to our expression for the distinct colorings of the cube and solve the problem. This gives us 
+
 $$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}=\frac{6!}{24}=\frac{720}{24}=30$$
+
 which is the answer that was found in the first solution! 
 
 ## Conclusion
