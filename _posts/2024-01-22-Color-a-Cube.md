@@ -2,7 +2,7 @@
 layout: post
 title: How Many ways Can you Color a Cube?   
 date: 2024-01-22
-categories: [mathematics, problem solving, python]
+categories: [mathematics, problem solving]
 ---
 ## Preface To My Subsequent Posts
 
