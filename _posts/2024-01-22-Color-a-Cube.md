@@ -58,10 +58,10 @@ It turns out that all the integers, real numbers, the complex numbers have somet
 
 First, I'll give the definition of a group, taken from the book *Combinatorics* by David R. Mazur:
 >A **group** is a pair (G,*) where G is a set and * is a binary operation on G that satisfies the following four properties.
->* **Closure:** For each $a, b, c \in G$, we have $a * b \in G$.
->* **Associativity:** For each $a,b,c \in G$, we have $a * (b * c) = (a * b) * c$.
->* **Existence of an identity:** There is an element $e \in G$ such that for each $a \in G$, we have $a * e = a$ and $e * a = a$.
->* **Existence of inverses:** For each $a \in G$, there exists $x \in G$ such that $a * x = e$ and $x * a = e$.
+>* **Closure:** For each $ a, b, c \in G $, we have $ a * b \in G $.
+>* **Associativity:** For each $ a,b,c \in G $, we have $ a * (b * c) = (a * b) * c $.
+>* **Existence of an identity:** There is an element $ e \in G $ such that for each $ a \in G $, we have $ a * e = a $ and $ e * a = a $.
+>* **Existence of inverses:** For each $ a \in G $, there exists $ x \in G $ such that $ a * x = e $ and $ x * a = e $.
 
 Some examples of groups are the integers $(...,-2,-1,0,1,2,...)$ under addition, the complex numbers $a+ib$ without zero under multiplication, and, the composition of rotations of a circle.
 
