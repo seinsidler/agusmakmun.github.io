@@ -142,4 +142,4 @@ Groups and symmetry groups are a huge topic in both modern mathematics and in ph
 
 I hope to keep writing more posts attacking fun problems along with more data science and applied mathematical projects that I find interesting, along with some opinion pieces where I see fit. I hope you enjoyed this little journey solving this problem, and hope to join me in my mathematical adventures in the future!
 
-<object data="2024-01-22-Color-a-Cube.pdf" type="application/pdf" width="100%"></object>
+<!-- <object data="2024-01-22-Color-a-Cube.pdf" type="application/pdf" width="100%"></object> -->
