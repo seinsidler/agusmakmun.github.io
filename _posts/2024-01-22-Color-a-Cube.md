@@ -5,7 +5,7 @@ date: 2024-01-22
 categories: [mathematics, problem solving]
 katex: true
 ---
-{% katexmm %}
+<!-- {% katexmm %} -->
 ## Preface To My Subsequent Posts
 
 This post is going to be the first of (hopefully) many posts where I intend to share fun and interesting problems along with topics of research in applied mathematics topics I encounter. The prequisite knowledge of my posts will vary drastically; sometimes, the posts (such as today) will require no prequisite knowledge outside of high school math before calculus, and others will be topics and problems will be more advanced and specific in nature. Before each post, I'll list certain topics or classes that might be useful to understand every element of a post. However, I'll do my best to make ideas and concepts in a way that is easy to understand, and my writing style will be pretty informal and oftentimes, I'll switch from using "we" when there's a problem to solve and "I" when I'm talking about all the times I get confused and want to journal my experience solving a problem and researching a topic. 
@@ -145,4 +145,4 @@ Groups and symmetry groups are a huge topic in both modern mathematics and in ph
 I hope to keep writing more posts attacking fun problems along with more data science and applied mathematical projects that I find interesting, along with some opinion pieces where I see fit. I hope you enjoyed this little journey solving this problem, and hope to join me in my mathematical adventures in the future!
 
 <!-- <object data="2024-01-22-Color-a-Cube.pdf" type="application/pdf" width="100%"></object> -->
-{% endkatexmm %}
+<!-- {% endkatexmm %} -->
