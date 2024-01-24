@@ -48,7 +48,7 @@ $$\{Red, Blue\},\{Blue, Red\}$$
 
 So, lets say we take a quarter and paint the top red and the bottom blue, and put that to the side. Then, we take another quarter, and paint the top of this quarter blue and the bottom red. We painted the two possible ordering of colors on this quarter, but we notice that if we flip one of the quarters over, we'll just have two identical looking quarters. At this point, if we flip over one quarter and swap them around a bunch of times like a street magician, we won't be able to tell them apart!
 
-This means that if we said there are two ways to color a coin, we would be overcounting the ways we can color the cube. But how do we account for this?
+This means that if we said there are two ways to color a coin, we would be overcounting the ways we can color the coin. But how do we account for this?
 
 Well, we know that quarter can be oriented two different ways. The first way is if we do nothing to the quarter and the second way is if we flip the quarter over. When we counted the number of ways we can order the two colors, that doesn't take into account the quarter looks the same when we do nothing to it and when we flip it. So if we take the number of ways we can orient the quarter, we get our answer: 
 
@@ -72,7 +72,7 @@ I can already feel the confusion many of you have seeing this definition. What t
 
 Lets start with what $\in$ means. Simply, you can replace the symbol $\in$ with the word "in." More concretely, when we say $a \in G$, we are saying a single element (or object) is part of a set. To be honest, it isn't important to get a specfic defintion of "element" or "set" for our purposes. A good example to understand this is using a deck of cards as our set and the ace of spades as an element. So, we could say $\textit{ace of spades} \in \textit{A deck of cards}$. Tying this to groups, the "$G$" is like our deck of cards, and $a, b, c$ are cards in the deck. 
 
-Second, lets talk about a binary operation. A binary operation is just a function that operates on two objects on a time, and outputs an object. We already know of some binary operations. For example, multiplication and addition of numbers are binary operations. Binary operations are just a name for all these kinds of operations. As we'll see, there are more binary operations than just multiplication and addition. 
+Second, lets talk about a binary operation. A binary operation is just a function that operates on two objects at a time, and outputs an object. We already know of some binary operations. For example, multiplication and addition of numbers are binary operations. Binary operations are just a name for all these kinds of operations. As we'll see, there are more binary operations than just multiplication and addition. 
 
 Lastly, you should care about groups because we can apply the concept of groups to our problem of coloring the cube!
 
