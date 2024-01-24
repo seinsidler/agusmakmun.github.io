@@ -96,7 +96,7 @@ First, like our coin example, we can just leave the cube as is. This is the iden
 
 Second, the next obvious set of rotations is if we flip the cube 90 degrees by each face. We can visualize this by putting the following axes inside the cube and using them to rotate around (this image along with the other similar images were found from [here](https://garsia.math.yorku.ca/~zabrocki/math4160w03/cubesyms/)).
 
-![image info](./pictures/cube1.gif)
+![image info](./pictures/cube1.png)
 
 For each of these axes, of which there are three, we can rotate the cube 90 degrees, 180 degrees, and 270 degrees (360 degrees would be the same as the identity). There are three of these kinds of rotations for the three axes, giving us 9 more rotations.
 
