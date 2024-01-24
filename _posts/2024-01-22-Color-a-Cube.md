@@ -51,7 +51,7 @@ This means that if we said there are two ways to color a coin, we would be overc
 
 Well, we know that quarter can be oriented two different ways. The first way is if we do nothing to the quarter and the second way is if we flip the quarter over. When we counted the number of ways we can order the two colors, that doesn't take into account the quarter looks the same when we do nothing to it and when we flip it. So if we take the number of ways we can orient the quarter, we get our answer: 
 
-$$ \begin{equation}\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the coin}}=\frac{2}{2}=1\end{equation}$$
+$$ \frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the coin}}=\frac{2}{2}=1$$
 
 How can we apply this to our problem. First, a detour into an interesting concept of mathematics: groups!
 
@@ -88,7 +88,7 @@ $$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orien
 
 With our knowledge of groups, we can now recognize that the denominator of the fraction is just the size of the symmetry group of the coin! We can write a similar expression for our cube problem as follows:
 
-$$\begin{equation}\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}\end{equation}$$
+$$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}$$
 
 So, if we can count the number of rotations of the cube, we can solve our problem! 
 
