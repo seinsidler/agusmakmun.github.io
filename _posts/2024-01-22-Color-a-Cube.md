@@ -96,9 +96,9 @@ First, like our coin example, we can just leave the cube as is. This is the iden
 
 Second, the next obvious set of rotations is if we flip the cube 90 degrees by each face. We can visualize this by putting the following axes inside the cube and using them to rotate around (this image along with the other similar images were found from [here](https://garsia.math.yorku.ca/~zabrocki/math4160w03/cubesyms/)).
 
-<!-- ![image info](./pictures/cube1.png) -->
+![My image](./pictures/cube1.png)
 
-<img title="a title" alt="Alt text" src="./pictures/cube1.png">
+<!-- <img title="a title" alt="Alt text" src="./pictures/cube1.png"> -->
 
 
 For each of these axes, of which there are three, we can rotate the cube 90 degrees, 180 degrees, and 270 degrees (360 degrees would be the same as the identity). There are three of these kinds of rotations for the three axes, giving us 9 more rotations.
@@ -141,3 +141,5 @@ We took a seemingly simple problem and were able to explore a rather important m
 Groups and symmetry groups are a huge topic in both modern mathematics and in physics. If you enjoyed this and want to learn more about groups in a rather uncomfrontational and informal manner, I highly recommend the book **Love & Math: The Heart of Hidden Reality** by Edward Frenkel. Along with giving a unique autobigrpahical perspective of being a mathematician in the late Soviet era, Frenkel does a great job explaining groups and expanding the idea of groups outside of what has been discussed here. We only talked about groups with a finite number of elements, but it turns out there are groups with an infinite number of elements! 
 
 I hope to keep writing more posts attacking fun problems along with more data science and applied mathematical projects that I find interesting, along with some opinion pieces where I see fit. I hope you enjoyed this little journey solving this problem, and hope to join me in my mathematical adventures in the future!
+
+<object data="2024-01-22-Color-a-Cube.pdf" type="application/pdf" width="100%"></object>
