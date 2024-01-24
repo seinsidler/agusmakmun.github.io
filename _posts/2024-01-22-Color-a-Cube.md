@@ -5,8 +5,6 @@ date: 2024-01-22
 categories: [mathematics, problem solving]
 katex: true
 ---
-<!-- {% katexmm %} -->
-I apologize for the formatting issues; I'm working on this currently!
 
 ## Preface To My Subsequent Posts
 
@@ -100,8 +98,9 @@ First, like our coin example, we can just leave the cube as is. This is the iden
 
 Second, the next obvious set of rotations is if we flip the cube 90 degrees by each face. We can visualize this by putting the following axes inside the cube and using them to rotate around (this image along with the other similar images were found from [here](https://garsia.math.yorku.ca/~zabrocki/math4160w03/cubesyms/)).
 
-![My image](./pictures/cube1.png)
+<!-- ![My image](./pictures/cube1.png) -->
 
+<img src="/pictures/cube1.png">
 <!-- <img title="a title" alt="Alt text" src="./pictures/cube1.png"> -->
 
 
@@ -109,14 +108,15 @@ For each of these axes, of which there are three, we can rotate the cube 90 degr
 
 The next two sets of rotations are less obvious, at least to me. We can think of the last rotation as rotations of the axes of opposite faces. What if we had axes that are from opposite edges? Visually, his would give us the following:
 
-![image info](./pictures/cube2.gif)
+<!-- ![image info](./pictures/cube2.gif) -->
+<img src="/pictures/cube2.gif">
 
 If your holding a cube in your hands right now, you can recreate this by holding the cube in one hand by diagonally opposing edges. We can do this in 6 possible ways, meaning there are 6 axes to rotate over. However, these rotations are not incremented by 90 degrees this time. If you are holding the cube along one of these axes, you would have to rotate the cube twice to get it back to where it started. This means that these rotations are 180 degree rotations. Because there are 6 axes and 2 rotations for each axes before we get back to the start, that gives us 6 total rotations (remember, rotating twice along one of these axes is the same as the identity rotation, which we already counted). 
 
 We have created rotations by each face and by each edge. You might have guessed that the last set of rotations could come from axes constructed from opposite corners. Visually, this would look like the following:
 
-![image info](./pictures/cube3.gif)
-
+<!-- ![image info](./pictures/cube3.gif) -->
+<img src="/pictures/cube3.gif">
 As you can see or have figured out by holding the cube, there are four of such axes. If you rotate along these axes by pinching opposing corners of a cube and rotating, you should notice it takes three rotations, or three 120 degree rotations, to get back to where you started. This means we have two rotations for each of the four axes, giving us 8 total rotations.
 
 Finally, we can add all these up to get the total number of rotations of the cube, or the size of the symmetry group! This gives us 
@@ -147,4 +147,3 @@ Groups and symmetry groups are a huge topic in both modern mathematics and in ph
 I hope to keep writing more posts attacking fun problems along with more data science and applied mathematical projects that I find interesting, along with some opinion pieces where I see fit. I hope you enjoyed this little journey solving this problem, and hope to join me in my mathematical adventures in the future!
 
 <!-- <object data="2024-01-22-Color-a-Cube.pdf" type="application/pdf" width="100%"></object> -->
-<!-- {% endkatexmm %} -->
