@@ -118,6 +118,7 @@ We have created rotations by each face and by each edge. You might have guessed 
 
 <!-- ![image info](./pictures/cube3.gif) -->
 <img src="/pictures/cube3.gif">
+
 As you can see or have figured out by holding the cube, there are four of such axes. If you rotate along these axes by pinching opposing corners of a cube and rotating, you should notice it takes three rotations, or three 120 degree rotations, to get back to where you started. This means we have two rotations for each of the four axes, giving us 8 total rotations.
 
 Finally, we can add all these up to get the total number of rotations of the cube, or the size of the symmetry group! This gives us 
