@@ -29,7 +29,7 @@ The book's solution is stated as follows:
 
 Remember that when you see $$3!$$, $$4!$$, or $$n!$$, that is called the factorial, which is defined as 
 
-$$$$n!=n\cdot (n-1)\cdot (n-2) \cdot ... \cdot 1$$$$
+$$n!=n\cdot (n-1)\cdot (n-2) \cdot ... \cdot 1$$
 
 So for example $$4!=4\cdot 3\cdot 2\cdot 1=24$$ and $$6!=6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1=720$$. 
 
@@ -43,7 +43,7 @@ So, how many ways are there to color each side of a coin with two different colo
 
 Well, if we didn't know any better, we might say that there are two different ways to order the colors, say red and blue: 
 
-$$$$\{Red, Blue\},\{Blue, Red\}$$$$
+$$\{Red, Blue\},\{Blue, Red\}$$
 
 So, lets say we take a quarter and paint the top red and the bottom blue, and put that to the side. Then, we take another quarter, and paint the top of this quarter blue and the bottom red. We painted the two possible ordering of colors on this quarter, but we notice that if we flip one of the quarters over, we'll just have two identical looking quarters. At this point, if we flip over one quarter and swap them around a bunch of times like a street magician, we won't be able to tell them apart!
 
@@ -51,7 +51,7 @@ This means that if we said there are two ways to color a coin, we would be overc
 
 Well, we know that quarter can be oriented two different ways. The first way is if we do nothing to the quarter and the second way is if we flip the quarter over. When we counted the number of ways we can order the two colors, that doesn't take into account the quarter looks the same when we do nothing to it and when we flip it. So if we take the number of ways we can orient the quarter, we get our answer: 
 
-$$$$ \frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the coin}}=\frac{2}{2}=1$$$$
+$$ \frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the coin}}=\frac{2}{2}=1$$
 
 How can we apply this to our problem. First, a detour into an interesting concept of mathematics: groups!
 
@@ -84,11 +84,11 @@ From this, we can see that the rotations of a coin forms a group, or more specif
 ## Back to the Problem
 If we remember when we solved the problem for the coin, we used the following expression to figure out all the ways to color the coin.
 
-$$$$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the coin}}$$$$
+$$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the coin}}$$
 
 With our knowledge of groups, we can now recognize that the denominator of the fraction is just the size of the symmetry group of the coin! We can write a similar expression for our cube problem as follows:
 
-$$$$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}$$$$
+$$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}$$
 
 So, if we can count the number of rotations of the cube, we can solve our problem! 
 
@@ -120,22 +120,22 @@ We have created rotations by each face and by each edge. You might have guessed 
 As you can see or have figured out by holding the cube, there are four of such axes. If you rotate along these axes by pinching opposing corners of a cube and rotating, you should notice it takes three rotations, or three 120 degree rotations, to get back to where you started. This means we have two rotations for each of the four axes, giving us 8 total rotations.
 
 Finally, we can add all these up to get the total number of rotations of the cube, or the size of the symmetry group! This gives us 
-$$$$1+9+6+8=24$$$$
+$$1+9+6+8=24$$
 total rotations. 
 
 Putting this all together, we can return to our expression for finding the number of distinct ways to color the cube with six colors, which is the following:
 
-$$$$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}$$$$
+$$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}$$
 
 We found the denominator to be 24. We can find the numerator in the following way: we have 6 choices for the first color, and for each choice of the first color, we have 5 choices for the second color. For the 5 choices of the second color, we have 4 choices for the third color. We keep this going all the way down to having 1 choice for the last color given 2 choices for the second to last color. This means that there are 
 
-$$$$6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1=6!=720$$$$
+$$6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1=6!=720$$
 
 ways to order the 6 colors. 
 
 Now, we have all we need to plug in to our expression for the distinct colorings of the cube and solve the problem. This gives us 
 
-$$$$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}=\frac{6!}{24}=\frac{720}{24}=30$$$$
+$$\frac{\textit{number of ways to order colors}}{\textit{number of ways to orient the cube}}=\frac{6!}{24}=\frac{720}{24}=30$$
 
 which is the answer that was found in the first solution! 
 
