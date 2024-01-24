@@ -7,7 +7,7 @@ katex: true
 ---
 {% katexmm %}
 
-## Preface To My Subsequent Posts
+## Preface 
 
 This post is going to be the first of (hopefully) many posts where I intend to share fun and interesting problems along with topics of research in applied mathematics topics I encounter. The prequisite knowledge of my posts will vary drastically; sometimes, the posts (such as today) will require no prequisite knowledge outside of high school math before calculus, and others will be topics and problems will be more advanced and specific in nature. Before each post, I'll list certain topics or classes that might be useful to understand every element of a post. However, I'll do my best to make ideas and concepts in a way that is easy to understand, and my writing style will be pretty informal and oftentimes, I'll switch from using "we" when there's a problem to solve and "I" when I'm talking about all the times I get confused and want to journal my experience solving a problem and researching a topic. 
 
