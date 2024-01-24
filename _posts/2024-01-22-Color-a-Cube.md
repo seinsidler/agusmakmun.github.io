@@ -100,6 +100,7 @@ Second, the next obvious set of rotations is if we flip the cube 90 degrees by e
 
 <img title="a title" alt="Alt text" src="./pictures/cube1.png">
 
+
 For each of these axes, of which there are three, we can rotate the cube 90 degrees, 180 degrees, and 270 degrees (360 degrees would be the same as the identity). There are three of these kinds of rotations for the three axes, giving us 9 more rotations.
 
 The next two sets of rotations are less obvious, at least to me. We can think of the last rotation as rotations of the axes of opposite faces. What if we had axes that are from opposite edges? Visually, his would give us the following:
