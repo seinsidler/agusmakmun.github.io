@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Expected Value: How to Win at Poker, Sports, and Life   
-date: 2024-01-22
+date: 2024-02-01
 categories: [mathematics]
 katex: true
 ---
