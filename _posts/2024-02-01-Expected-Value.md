@@ -75,7 +75,7 @@ Let's take a look at an example with a solver to see how expected value comes in
 
 Below is a screenshot of a poker solver for a particular hand. Poker solvers usually are for situations where it is two players against each other, so we have player 1 and player 2 as different players in our solvers. At the top, we have the game decision tree. This shows the actions taken along with the current possible decisions and when new cards appear on the board. For poker solvers to be able to solve a situation, we have to set certain bet sizes. This helps to make the game tree a reasonable size. Otherwise, we would have to wait lifetimes before we could study a hand! 
 
-<img src="/pictures/overview_of_a_solver.png">
+<img src="\pictures\overiew_of_a_solver.png">
 
 We are also given a table of all the hands, sorted by highest to lowest equity (lets not get into that concept now, for another post), along with "EV", or our good ole friend, expected value! 
 
