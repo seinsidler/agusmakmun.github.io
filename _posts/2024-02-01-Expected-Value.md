@@ -83,17 +83,17 @@ It's also important to note that the solver is used for all the betting after we
 
 The last important thing to note, the big grid in the middle shows all the hands you would be left with (that you haven't folded at some point according the the solver), and they are colored by the actions you should most likely take. 
 
-One way I study with solvers is to take particular spots I encounter and review whether the decisions I made cost me expected value. For example, lets say I'm player one and I have Qc8c in my hand and we play out the hand according to the image of the solver above. In other words, KhTh8s6s5c is on the board and it is my turn to bet. Here, we are restricting ourselves to three possible decisions: a huge all-in bet, a small bet, or check. It's also good to note that the currently has $90 in it in this scenario and we have $449 in our own stack of chips.  
+One way I study with solvers is to take particular spots I encounter and review whether the decisions I made cost me expected value. For example, lets say I'm player one and I have Qc8c in my hand and we play out the hand according to the image of the solver above. In other words, KhTh8s6s5c is on the board and it is my turn to bet. Here, we are restricting ourselves to three possible decisions: a huge all-in bet, a small bet, or check. It's also good to note that the currently has \$90 in it in this scenario and we have \$449 in our own stack of chips.  
 
 If we look at the row of the table for Qc8c, we get what's shown below.
 
 <img src="/pictures/qc8c.png">
 
-We can see that our EV (or expected value) overall for our hand is $26.81. Considering the pot being $90, this doesn't look too good for our hand, but it certainly could be worse. We have a pair of eights, which is beat by a lot, but can beat some hands that are worthless. 
+We can see that our EV (or expected value) overall for our hand is \$26.81. Considering the pot being \$90, this doesn't look too good for our hand, but it certainly could be worse. We have a pair of eights, which is beat by a lot, but can beat some hands that are worthless. 
 
-The colorful numbers next to expected value are the expected value of each decision; the dark blue number is the expected value of a big bet, the pink number is the expected value of a small bet, and the green number is the expected value of a check. As we can see, making a big bet has a negative expected value of $-53.07. It would be a terrible decision to go all in with eights here!
+The colorful numbers next to expected value are the expected value of each decision; the dark blue number is the expected value of a big bet, the pink number is the expected value of a small bet, and the green number is the expected value of a check. As we can see, making a big bet has a negative expected value of \$-53.07. It would be a terrible decision to go all in with eights here!
 
-But should we bet at all? Even a little bit? The expected value of a small bet is $25.31 while just checking has an expected value $26.81. While this is a small difference, over time, these decisions compound. That's why the solver decision is purely check here and never betting, and the expected value of Qc8c at this point in the hand is the same as checking. 
+But should we bet at all? Even a little bit? The expected value of a small bet is \$25.31 while just checking has an expected value \$26.81. While this is a small difference, over time, these decisions compound. That's why the solver decision is purely check here and never betting, and the expected value of Qc8c at this point in the hand is the same as checking. 
 
 That's enough about poker! We could see how expected value is useful for poker, but lets see how it applies on the diamond.
 
@@ -130,13 +130,13 @@ There are many other uses for expected value in baseball, and the A's utilized e
 Okay, this is the last clickbait in this post, I promise. But expected value can at least help you fight off your human instincts when these instincts cause you to make decisions antithetical to your goals!
 
 ### Take More Risks, My Friends!
-[Veritasium made a video](https://www.youtube.com/watch?v=vBX-KulgJ1o) asking people on the street if they would take a bet that is identical the bet I posed earlier made by *Scott's Fair & Fun Casino*. He asked people to bet on a coin flip, and if they win, they get $10 (I think it was some other currency that I couldn't recognize, but the specific currency is pretty irrelevant to the point) and if they lose, they lose $10. As we discussed before, and as Veritasium discusses, this is a fair bet. That means you would be break even taking this bet. No one took the bet.
+[Veritasium made a video](https://www.youtube.com/watch?v=vBX-KulgJ1o) asking people on the street if they would take a bet that is identical the bet I posed earlier made by *Scott's Fair & Fun Casino*. He asked people to bet on a coin flip, and if they win, they get \$10 (I think it was some other currency that I couldn't recognize, but the specific currency is pretty irrelevant to the point) and if they lose, they lose \$10. As we discussed before, and as Veritasium discusses, this is a fair bet. That means you would be break even taking this bet. No one took the bet.
 
-He then asked people, if instead of winning $10, you win $15 instead. Still, no one took it.
+He then asked people, if instead of winning \$10, you win \$15 instead. Still, no one took it.
 
 With our knowledge of expected value, we an see that the expected value of this bet for us, assuming a fair coin, is 
 $$ \frac{1}{2}\cdot \$15 -\frac{1}{2}\cdot \$10=\$2.50$$
-so we should take this bet because we expect to win $2.50 on average. 
+so we should take this bet because we expect to win \$2.50 on average. 
 
 He kept increasing the winnings, but people still refused. The feeling of losing money was more present in their minds than the chance of winning money. This is part of our own psychology. But with our knowledge of expected value, we can find when risks are worth taking!
 
