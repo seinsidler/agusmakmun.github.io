@@ -97,6 +97,7 @@ But should we bet at all? Even a little bit? The expected value of a small bet i
 
 That's enough about poker! We could see how expected value is useful for poker, but lets see how it applies on the diamond.
 
+
 ## How to Win at Baseball
 One of my favorite books of all time (the movie is pretty good too), *Moneyball: The Art of Winning an Unfair Game* by Michael Lewis, documents the start of the data revolution in baseball. More specficially, Michael Lewis follows general manager Billy Beane of the Oakland A's during the 2002 season. Billy Beane and the Oakland A's were trying to do something no other baseball team truly attempted: use a data drive approach to try to win baseball games. 
 
