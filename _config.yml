@@ -36,9 +36,13 @@ per_page: 20
 paginate_path: "/page/:num/"
 markdown: kramdown
 plugins:
-  - jekyll-paginate
-  - jekyll-gist
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-katex
+# If you used a Pages theme:
+# remote_theme: pages-themes/primer@v0.6.0
+
 
 compress_html:
   clippings: all
